@@ -1,0 +1,15 @@
+<%
+response.charset = "UTF-8"
+
+Function FiltroParolacce(TestoCompleto)
+    Dim parolacce, filtro, i
+    parolacce = Array("cuzão", "porra", "biricchino")
+    filtro = TestoCompleto
+    For i = LBound(parolacce) To UBound(parolacce)
+        filtro = Replace(filtro, parolacce(i), String(Len(parolacce(i)),"*"))
+    Next
+    FiltroParolacce = filtro
+End Function
+
+response.write FiltroParolacce("olá seu cuzão da porra....")
+%>
